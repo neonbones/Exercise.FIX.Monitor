@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitor", "Monitor\Monitor.csproj", "{C32399A0-33BE-4C89-888F-425C3342B96A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monitor", "Monitor\Monitor.csproj", "{C32399A0-33BE-4C89-888F-425C3342B96A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitor.Tests", "Monitor.Tests\Monitor.Tests.csproj", "{D2733890-94EF-4F4D-B635-5EE259759574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitor.IntegrationTests", "Monitor.IntegrationTests\Monitor.IntegrationTests.csproj", "{9F52E3E3-1CFA-437E-903E-0DA7D3962079}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{C32399A0-33BE-4C89-888F-425C3342B96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C32399A0-33BE-4C89-888F-425C3342B96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C32399A0-33BE-4C89-888F-425C3342B96A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2733890-94EF-4F4D-B635-5EE259759574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2733890-94EF-4F4D-B635-5EE259759574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2733890-94EF-4F4D-B635-5EE259759574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2733890-94EF-4F4D-B635-5EE259759574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F52E3E3-1CFA-437E-903E-0DA7D3962079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F52E3E3-1CFA-437E-903E-0DA7D3962079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F52E3E3-1CFA-437E-903E-0DA7D3962079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F52E3E3-1CFA-437E-903E-0DA7D3962079}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
