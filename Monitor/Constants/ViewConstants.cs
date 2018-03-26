@@ -37,6 +37,7 @@ namespace Monitor.Constants
             { "Site", "Сайт" },
             { "Sites", "Сайты" },
             { "RefreshTime", "Обновление" },
+            { "State", "Статус:"},
             #endregion
 
             #region Roles

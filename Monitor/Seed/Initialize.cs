@@ -19,7 +19,7 @@ namespace Monitor.Seed
             string userPassword = "qwerty";
 
             string correctSiteName = "http://google.com";
-            string incorrectSiteName = "http://vvvvvveqwqw.ru/";
+            string incorrectSiteName = "http://vvvvvveqwqw.ru";
 
             using (WebAppContext db = serviceProvider.GetRequiredService<WebAppContext>())
             {

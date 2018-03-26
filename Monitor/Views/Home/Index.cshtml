@@ -9,24 +9,26 @@
             foreach (var site in Model)
             {
                 <div class="col-md-3">
+                    
                     <div class="panel panel-default">
-                    <div class="panel-heading">Сайт: @site.Name</div>
+                    <div class="panel-heading">@ResourceProvider.GetResource("Site"): @site.Name</div>
                     <div class="panel-body">
                         @if (site.Availability == true)
                         {
-                            <p>Статус: <span class="glyphicon glyphicon-signal" aria-hidden="true"></span></p>
-
+                            <div class="alert-success">
+                                <p>@ResourceProvider.GetResource("State") <span class="glyphicon glyphicon-signal" aria-hidden="true"></span></p>
+                            </div>
                         }
                         else
                         {
-                            <p>Статус: <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></p>
+                            <div class="alert-danger">
+                                <p>@ResourceProvider.GetResource("State") <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></p>
+                            </div>
                         }
                     </div>
                     </div>
                 </div>               
             }
         }
-
-
     </div>
 </div>
