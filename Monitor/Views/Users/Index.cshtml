@@ -1,0 +1,39 @@
+@model IEnumerable<Monitor.Models.User>
+@using Monitor.Services
+@{
+    ViewBag.Title = ResourceProvider.GetResource("Users");
+}
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a asp-action="Index" asp-controller="Home">@ResourceProvider.GetResource("Home")</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ol>
+
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading"><span class="glyphicon glyphicon-link"></span> @ViewBag.Title</div>
+            <table class="table">
+                <tr>
+                    <th>@ResourceProvider.GetResource("FirstName")</th>
+                    <th>@ResourceProvider.GetResource("LastName")</th>
+                    <th>@ResourceProvider.GetResource("Actions")</th>
+                </tr>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.FirstName</td>
+                        <td>@user.LastName</td>
+                        <td>
+                            <a asp-controller="Users" asp-action="Details" asp-route-id="@user.Id"><span class="glyphicon glyphicon-eye-open"></span></a> |
+                            <a asp-controller="Users" asp-action="Edit" asp-route-id="@user.Id"><span class="glyphicon glyphicon-pencil"></span></a> |
+                            <a asp-controller="Users" asp-action="Delete" asp-route-id="@user.Id"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="form-group">
+            <a asp-controller="Users" asp-action="Create" class="btn btn-primary btn-lg btn-block" role="button">@ResourceProvider.GetResource("Add")</a>
+        </div>
+    </div>
+</div>

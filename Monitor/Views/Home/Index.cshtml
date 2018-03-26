@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Monitor.ViewModels.SiteModel>
+@using Monitor.Services
+@{
+    ViewBag.Title = ResourceProvider.GetResource("Sites");
+}
+<div class="container">
+    <div class="row">
+        @{
+            foreach (var site in Model)
+            {
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                    <div class="panel-heading">Сайт: @site.Name</div>
+                    <div class="panel-body">
+                        @if (site.Availability == true)
+                        {
+                            <p>Статус: <span class="glyphicon glyphicon-signal" aria-hidden="true"></span></p>
+
+                        }
+                        else
+                        {
+                            <p>Статус: <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></p>
+                        }
+                    </div>
+                    </div>
+                </div>               
+            }
+        }
+
+
+    </div>
+</div>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Monitor.Models.Role>
+@using Monitor.Services
+@{
+    ViewBag.Title = ResourceProvider.GetResource("Roles");
+}
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a asp-area="" asp-action="Index" asp-controller="Home">@ResourceProvider.GetResource("Home")</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ol>
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading"><span class="glyphicon glyphicon-link"></span> @ViewBag.Title</div>
+            <table class="table">
+                <tr>
+                    <th>@ResourceProvider.GetResource("Role")</th>
+                    <th>@ResourceProvider.GetResource("Actions")</th>
+                </tr>
+
+                @foreach (var role in Model)
+                {
+                    <tr>
+                        <td>@role.Name</td>
+                        <td>
+                            <a asp-controller="Roles" asp-action="Details" asp-route-id="@role.Id"><span class="glyphicon glyphicon-eye-open"></span></a> |
+                            <a asp-controller="Roles" asp-action="Edit" asp-route-id="@role.Id"><span class="glyphicon glyphicon-pencil"></span></a> |
+                            <a asp-controller="Roles" asp-action="Delete" asp-route-id="@role.Id"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="form-group">
+            <a class="btn btn-primary btn-lg btn-block" asp-controller="Roles" asp-action="Create" role="button">@ResourceProvider.GetResource("Add")</a>
+        </div>
+    </div>
+</div>

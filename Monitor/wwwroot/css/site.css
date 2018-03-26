@@ -1,0 +1,157 @@
+﻿html,
+body {
+    height: 100%;
+    font-family: Ubuntu, sans-serif;
+    background-size: cover;
+    background-repeat: repeat;
+}
+/* Links --------------------------------------- */
+a {
+    color: #000000;
+    text-decoration: none;
+    transition: background 0.5s;
+}
+a:hover, a:focus {
+    color: rgba(108, 108, 108, 0.80);
+    text-decoration: none;
+}
+/* //Links --------------------------------------- */
+
+/* Wrap --------------------------------------- */
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 20px 20px 20px;
+}
+/* //Wrap --------------------------------------- */
+
+/* Footer --------------------------------------- */
+.footer {
+    height: 60px;
+    border-color: #e7e7e7;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    color: rgb(51, 51, 51);
+    background-color: rgb(248, 248, 248);
+}
+.a-footer {
+    color: #000000;
+    text-decoration: none;
+    transition: background 0.5s;
+}
+.a-footer:hover {
+    color: rgba(108, 108, 108, 0.80);
+    text-decoration: none;
+    transition: background 0.5s;
+}
+.a-footer:focus {
+    color: rgba(108, 108, 108, 0.80);
+    text-decoration: none;
+    transition: background 0.5s;
+}
+/* //Footer --------------------------------------- */
+
+/* Breadcrumb-------------------------------------- */
+.breadcrumb {
+    border-radius: 5px;
+    color: #fff;
+    background-color: rgb(248, 248, 248);
+    border-color: #21201e;
+}
+
+.breadcrumb > .active {
+    color: #000000;
+}
+.breadcrumb > li + li:before {
+    padding: 0 5px;
+    color: #000000;
+    content: "/\00a0";
+}
+/* //Breadcrumb-------------------------------------- */
+
+/* Section-------------------------------------- */
+.section-table {
+    margin-top: 10%;
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.section-row {
+    display: table-row;
+}
+
+.section-cell {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.section-center {
+    max-width: 500px;
+    display: inline-block;
+}
+/* //Section-------------------------------------- */
+
+
+/* Buttons-------------------------------------- */
+.btn {
+    font-family: Montserrat,sans-serif;
+    color: #fff;
+    font-size: 17px;
+    padding: 10px 20px;
+    border: none;
+    transition: background 0.5s;
+}
+.btn-primary {
+    background-color: rgb(248, 248, 248);
+    color: #000000;
+    border: 1px solid #ccc;
+}
+.btn-primary:focus {
+    background-color: rgba(108, 108, 108, 0.80);
+    border: 1px solid #ccc;
+}
+.btn-primary:hover {
+    background-color: rgba(108, 108, 108, 0.80);
+    border: 1px solid #ccc;
+}
+.btn-primary:active {
+    background-color: rgba(108, 108, 108, 0.80);
+    border: 1px solid #ccc;
+}
+/* //Buttons-------------------------------------- */
+
+
+
+/* Валидация ошибок */
+.field-validation-error {
+    color: #337ab7;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 2px solid #337ab7;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}

@@ -1,0 +1,39 @@
+﻿@model Monitor.Models.Site
+@using Monitor.Services
+@{
+    ViewBag.Title = ResourceProvider.GetResource("Delete");
+}
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a asp-action="Index" asp-controller="Home">@ResourceProvider.GetResource("Home")</a></li>
+        <li><a asp-action="Index" asp-controller="Sites">@ResourceProvider.GetResource("Sites")</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ol>
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading"><span class="glyphicon glyphicon-trash"></span> @ResourceProvider.GetResource("ConfirmDelete")</div>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">@ResourceProvider.GetResource("Identifier")</th>
+                        <td>@Model.Id</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">@ResourceProvider.GetResource("Site") </th>
+                        <td>@Model.Name</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">@ResourceProvider.GetResource("RefreshTime") </th>
+                        <td>@Model.RefreshTime</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <form asp-action="Delete" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary btn-lg btn-block" value="@ResourceProvider.GetResource("Delete")" />
+            </div>
+            <a asp-action="Index" asp-controller="Sites" class="btn btn-primary btn-lg btn-block" Site="button">@ResourceProvider.GetResource("Back")</a>
+        </form>
+    </div>
+</div>

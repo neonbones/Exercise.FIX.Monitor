@@ -1,0 +1,96 @@
+﻿@using Monitor.Services
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700|Montserrat:400,700" rel="stylesheet" type="text/css">
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/js/site.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-left">
+                        @{
+                            if (User.IsInRole("User"))
+                            {
+                                <li><a asp-action="Index" asp-controller="Home"><span class="glyphicon glyphicon-home"></span> @ResourceProvider.GetResource("Home")</a></li>
+                                <li><a asp-action="Index" asp-controller="Sites"><span class="glyphicon glyphicon-globe"></span> @ResourceProvider.GetResource("Sites")</a></li>
+                            }
+                            else if (User.IsInRole("Administrator"))
+                            {
+                                <li><a asp-action="Index" asp-controller="Home"><span class="glyphicon glyphicon-home"></span> @ResourceProvider.GetResource("Home")</a></li>
+                                <li><a asp-action="Index" asp-controller="Sites"><span class="glyphicon glyphicon-globe"></span> @ResourceProvider.GetResource("Sites")</a></li>
+                                <li><a asp-action="Index" asp-controller="Roles"><span class="glyphicon glyphicon-sunglasses"></span> @ResourceProvider.GetResource("Roles")</a></li>
+                                <li><a asp-action="Index" asp-controller="Users"><span class="glyphicon glyphicon-user"></span> @ResourceProvider.GetResource("Users")</a></li>
+                            }
+                            else
+                            {
+                                <li><a asp-action="Index" asp-controller="Home"><span class="glyphicon glyphicon-home"></span> @ResourceProvider.GetResource("Home")</a></li>
+                            }
+                        }
+                    </ul>
+                    @{ 
+                        if (User.IsInRole("User"))
+                        {
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Личный Кабинет <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a asp-action="Logout" asp-controller="Account"><span class="glyphicon glyphicon-user"></span> @ResourceProvider.GetResource("Logout") @User.Identity.Name</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        }
+                        else if (User.IsInRole("Administrator"))
+                        {
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Личный Кабинет <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a asp-action="Logout" asp-controller="Account"><span class="glyphicon glyphicon-user"></span> @ResourceProvider.GetResource("Logout") @User.Identity.Name</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul class="nav navbar-nav navbar-right">
+
+                                <li><a asp-action="Index" asp-controller="Account"><span class="glyphicon glyphicon-user"></span> @ResourceProvider.GetResource("Enter")</a></li>
+                            </ul>
+                        }
+                    }                
+                </div>
+            </div>
+        </nav>
+        @RenderBody()
+    </div>
+    <div class="footer">
+        <div class="container">
+            <p>© 2018 Monitor. Все права защищены | Design by <a class="a-footer" href="https://github.com/skylark">Asylgareev Rustam</a></p>
+        </div>
+    </div>
+</body>
+</html>

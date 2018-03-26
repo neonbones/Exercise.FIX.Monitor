@@ -1,0 +1,41 @@
+﻿@model Monitor.ViewModels.LoginModel
+@{
+    ViewBag.Title = "Войти";
+}
+<div class="container">
+    <div class="section-table">
+        <div class="section-row">
+            <div class="section-cell">
+                <div class="section-center">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Авторизация</div>
+                        <div class="panel-body">
+                            <form class="form-horizontal" asp-action="Index" asp-anti-forgery="true">
+                                <div class="validation" asp-validation-summary="ModelOnly"></div>
+                                <div class="form-group">
+                                    <label asp-for="Login" class="col-sm-2 control-label"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" asp-for="Login" class="form-control" placeholder="Введите логин" />
+                                        <span asp-validation-for="Login" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Password" class="col-sm-2 control-label"><i class="fa fa-key fa-2x" aria-hidden="true"></i></label>
+                                    <div class="col-sm-10">
+                                        <input asp-for="Password" class="form-control" placeholder="Введите пароль" />
+                                        <span asp-validation-for="Password" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Войти</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
