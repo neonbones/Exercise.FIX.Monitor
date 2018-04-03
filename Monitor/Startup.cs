@@ -25,7 +25,7 @@ namespace Monitor
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string connection = "Server=(localdb)\\mssqllocaldb;Database=MonitorDB;Trusted_Connection=True;MultipleActiveResultSets=true";
+            string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<WebAppContext>(options => options.UseSqlServer(connection));
 
             // Use Cookie Auth
@@ -38,6 +38,12 @@ namespace Monitor
 
             // Register Hosted Services
             services.AddSingleton<IHostedService, AvailabilityCheckService>();
+
+            // Added - uses IOptions<T> for your settings.
+            services.AddOptions();
+
+            // Added - Confirms that we have a home for our DemoSettings
+            services.Configure<GlobalSettings>(Configuration.GetSection("GlobalSettings"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

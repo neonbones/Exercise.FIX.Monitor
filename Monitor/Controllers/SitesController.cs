@@ -5,16 +5,22 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Monitor.Models;
 using Microsoft.AspNetCore.Authorization;
+using Monitor.Services.Background;
+using System.Threading;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Monitor.Controllers
 {
     public class SitesController : Controller
     {
         private readonly WebAppContext _context;
+        private readonly IServiceProvider _provider;       
 
-        public SitesController(WebAppContext context)
+        public SitesController(WebAppContext context, IServiceProvider provider)
         {
             _context = context;
+            _provider = provider;
         }
 
         // GET: Sites
@@ -61,7 +67,7 @@ namespace Monitor.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(site);
-                await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();                
                 return RedirectToAction(nameof(Index));
             }
             return View(site);

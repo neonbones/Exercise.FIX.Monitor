@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Monitor.ViewModels.SiteModel>
+﻿@model IEnumerable<Monitor.Models.Availability>
 @using Monitor.Services
 @{
     ViewBag.Title = ResourceProvider.GetResource("Sites");
@@ -6,14 +6,14 @@
 <div class="container">
     <div class="row">
         @{
-            foreach (var site in Model)
+            foreach (var availability in Model)
             {
                 <div class="col-md-3">
                     
                     <div class="panel panel-default">
-                    <div class="panel-heading">@ResourceProvider.GetResource("Site"): @site.Name</div>
+                    <div class="panel-heading">@ResourceProvider.GetResource("Site"): @availability.Site.Name</div>
                     <div class="panel-body">
-                        @if (site.Availability == true)
+                        @if (availability.State == true)
                         {
                             <div class="alert-success">
                                 <p>@ResourceProvider.GetResource("State") <span class="glyphicon glyphicon-signal" aria-hidden="true"></span></p>
