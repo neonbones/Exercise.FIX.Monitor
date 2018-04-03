@@ -119,7 +119,7 @@ namespace Monitor.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Id", user.RoleId);
+            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Name", user.RoleId);
             return View(user);
         }
 

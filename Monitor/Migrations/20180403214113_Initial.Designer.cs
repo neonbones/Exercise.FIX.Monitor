@@ -11,7 +11,7 @@ using System;
 namespace Monitor.Migrations
 {
     [DbContext(typeof(WebAppContext))]
-    [Migration("20180326144138_Initial")]
+    [Migration("20180403214113_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,22 @@ namespace Monitor.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Monitor.Models.Availability", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("SiteId");
+
+                    b.Property<bool>("State");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SiteId");
+
+                    b.ToTable("Availabilities");
+                });
 
             modelBuilder.Entity("Monitor.Models.Role", b =>
                 {
@@ -41,6 +57,8 @@ namespace Monitor.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired();
+
+                    b.Property<int>("RefreshTime");
 
                     b.HasKey("Id");
 
@@ -73,6 +91,14 @@ namespace Monitor.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Monitor.Models.Availability", b =>
+                {
+                    b.HasOne("Monitor.Models.Site", "Site")
+                        .WithMany()
+                        .HasForeignKey("SiteId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Monitor.Models.User", b =>

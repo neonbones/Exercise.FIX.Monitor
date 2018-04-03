@@ -17,13 +17,15 @@ namespace Monitor.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly WebAppContext _context;       
-        public HomeController(WebAppContext context, IHostingEnvironment env)
+        private readonly WebAppContext _context;
+        public HomeController(WebAppContext context)
         {
             _context = context;
         }
+
         public async Task<IActionResult> Index()
         {
+            
             var availability = _context.Availabilities.Include(u => u.Site);
 
             return View(await availability.ToListAsync());

@@ -1,29 +1,29 @@
 ﻿@model Monitor.Models.Site
-@using Monitor.Services
+
 @{
-    ViewBag.Title = ResourceProvider.GetResource("Delete");
+    ViewBag.Title = "Удаление";
 }
 <div class="container">
     <ol class="breadcrumb">
-        <li><a asp-action="Index" asp-controller="Home">@ResourceProvider.GetResource("Home")</a></li>
-        <li><a asp-action="Index" asp-controller="Sites">@ResourceProvider.GetResource("Sites")</a></li>
+        <li><a asp-action="Index" asp-controller="Home">Домой</a></li>
+        <li><a asp-action="Index" asp-controller="Sites">Сайты</a></li>
         <li class="active">@ViewBag.Title</li>
     </ol>
     <div class="container-fluid">
         <div class="panel panel-default">
-            <div class="panel-heading"><span class="glyphicon glyphicon-trash"></span> @ResourceProvider.GetResource("ConfirmDelete")</div>
+            <div class="panel-heading"><span class="glyphicon glyphicon-trash"></span> Подтвердить</div>
             <table class="table">
                 <tbody>
                     <tr>
-                        <th scope="row">@ResourceProvider.GetResource("Identifier")</th>
+                        <th scope="row">Идентификатор</th>
                         <td>@Model.Id</td>
                     </tr>
                     <tr>
-                        <th scope="row">@ResourceProvider.GetResource("Site") </th>
+                        <th scope="row">Сайт </th>
                         <td>@Model.Name</td>
                     </tr>
                     <tr>
-                        <th scope="row">@ResourceProvider.GetResource("RefreshTime") </th>
+                        <th scope="row">Обновление </th>
                         <td>@Model.RefreshTime</td>
                     </tr>
                 </tbody>
@@ -31,9 +31,9 @@
         </div>
         <form asp-action="Delete" method="post">
             <div class="form-group">
-                <input type="submit" class="btn btn-primary btn-lg btn-block" value="@ResourceProvider.GetResource("Delete")" />
+                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Удаление" />
             </div>
-            <a asp-action="Index" asp-controller="Sites" class="btn btn-primary btn-lg btn-block" Site="button">@ResourceProvider.GetResource("Back")</a>
+            <a asp-action="Index" asp-controller="Sites" class="btn btn-primary btn-lg btn-block" Site="button">Назад</a>
         </form>
     </div>
 </div>

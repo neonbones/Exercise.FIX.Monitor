@@ -1,6 +1,4 @@
-﻿@using Monitor.Services
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -35,19 +33,20 @@
                         @{
                             if (User.IsInRole("User"))
                             {
-                                <li><a asp-action="Index" asp-controller="Home"><span class="glyphicon glyphicon-home"></span> @ResourceProvider.GetResource("Home")</a></li>
-                                <li><a asp-action="Index" asp-controller="Sites"><span class="glyphicon glyphicon-globe"></span> @ResourceProvider.GetResource("Sites")</a></li>
+                                <li><a asp-action="Index" asp-controller="Home"><span class="glyphicon glyphicon-home"></span> Домой</a></li>
+                                <li><a asp-action="Index" asp-controller="Sites"><span class="glyphicon glyphicon-globe"></span> Сайты</a></li>
                             }
                             else if (User.IsInRole("Administrator"))
                             {
-                                <li><a asp-action="Index" asp-controller="Home"><span class="glyphicon glyphicon-home"></span> @ResourceProvider.GetResource("Home")</a></li>
-                                <li><a asp-action="Index" asp-controller="Sites"><span class="glyphicon glyphicon-globe"></span> @ResourceProvider.GetResource("Sites")</a></li>
-                                <li><a asp-action="Index" asp-controller="Roles"><span class="glyphicon glyphicon-sunglasses"></span> @ResourceProvider.GetResource("Roles")</a></li>
-                                <li><a asp-action="Index" asp-controller="Users"><span class="glyphicon glyphicon-user"></span> @ResourceProvider.GetResource("Users")</a></li>
+                                <li><a asp-action="Index" asp-controller="Home"><span class="glyphicon glyphicon-home"></span> Домой</a></li>
+                                <li><a asp-action="Index" asp-controller="Sites"><span class="glyphicon glyphicon-globe"></span> Сайты</a></li>
+                                <li><a asp-action="Index" asp-controller="Roles"><span class="glyphicon glyphicon-sunglasses"></span> Роли</a></li>
+                                <li><a asp-action="Index" asp-controller="Users"><span class="glyphicon glyphicon-user"></span> Пользователи</a></li>
+                               
                             }
                             else
                             {
-                                <li><a asp-action="Index" asp-controller="Home"><span class="glyphicon glyphicon-home"></span> @ResourceProvider.GetResource("Home")</a></li>
+                                <li><a asp-action="Index" asp-controller="Home"><span class="glyphicon glyphicon-home"></span> Домой</a></li>
                             }
                         }
                     </ul>
@@ -58,7 +57,7 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Личный Кабинет <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a asp-action="Logout" asp-controller="Account"><span class="glyphicon glyphicon-user"></span> @ResourceProvider.GetResource("Logout") @User.Identity.Name</a></li>
+                                        <li><a asp-action="Logout" asp-controller="Account"><span class="glyphicon glyphicon-user"></span> Выйти: @User.Identity.Name</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -69,7 +68,7 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Личный Кабинет <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a asp-action="Logout" asp-controller="Account"><span class="glyphicon glyphicon-user"></span> @ResourceProvider.GetResource("Logout") @User.Identity.Name</a></li>
+                                        <li><a asp-action="Logout" asp-controller="Account"><span class="glyphicon glyphicon-user"></span> Выйти: @User.Identity.Name</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -78,7 +77,7 @@
                         {
                             <ul class="nav navbar-nav navbar-right">
 
-                                <li><a asp-action="Index" asp-controller="Account"><span class="glyphicon glyphicon-user"></span> @ResourceProvider.GetResource("Enter")</a></li>
+                                <li><a asp-action="Index" asp-controller="Account"><span class="glyphicon glyphicon-user"></span> Войти</a></li>
                             </ul>
                         }
                     }                
@@ -89,7 +88,7 @@
     </div>
     <div class="footer">
         <div class="container">
-            <p>© 2018 Monitor. Все права защищены | Design by <a class="a-footer" href="https://github.com/skylark">Asylgareev Rustam</a></p>
+            <p>© 2018 Monitor. Все права защищены | Design by <a class="a-footer" href="https://github.com/honeyskylark">Asylgareev Rustam</a></p>
         </div>
     </div>
 </body>

@@ -8,10 +8,7 @@ namespace Monitor.Tests
         [Fact]
         public void CanGetResource()
         {        
-            // Act
-            var result = ResourceProvider.GetResource("Home");
-            // Assert
-            Assert.Equal("Домой", result);
+            // Deleted since ResourceProvider is inactive
         }
     }
 }

@@ -1,8 +1,5 @@
 ﻿@model IEnumerable<Monitor.Models.Availability>
-@using Monitor.Services
-@{
-    ViewBag.Title = ResourceProvider.GetResource("Sites");
-}
+
 <div class="container">
     <div class="row">
         @{
@@ -11,20 +8,22 @@
                 <div class="col-md-3">
                     
                     <div class="panel panel-default">
-                    <div class="panel-heading">@ResourceProvider.GetResource("Site"): @availability.Site.Name</div>
+                    <div class="panel-heading">Сайт: @availability.Site.Name</div>
                     <div class="panel-body">
                         @if (availability.State == true)
                         {
                             <div class="alert-success">
-                                <p>@ResourceProvider.GetResource("State") <span class="glyphicon glyphicon-signal" aria-hidden="true"></span></p>
+                                <p>Статус: <span class="glyphicon glyphicon-signal" aria-hidden="true"></span></p>
                             </div>
                         }
                         else
                         {
                             <div class="alert-danger">
-                                <p>@ResourceProvider.GetResource("State") <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></p>
+                                <p>Статус: <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></p>
                             </div>
                         }
+                        <hr />
+                        <p>Обновление: @availability.Site.RefreshTime ms</p>
                     </div>
                     </div>
                 </div>               

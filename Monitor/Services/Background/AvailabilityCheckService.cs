@@ -39,6 +39,8 @@ namespace Monitor.Services.Background
                         GetStatus(site, cancellationToken);
                     });
                 }
+
+                // uncomment it for lifetime site adding
                 await Task.Delay(ConfigSettings.DelayTime, cancellationToken);
             }                    
         }
@@ -71,7 +73,14 @@ namespace Monitor.Services.Background
                     }
                     finally
                     {
-                        await Task.Delay(site.RefreshTime, cancellationToken);
+                        using (IServiceScope scope = _provider.CreateScope())
+                        {
+                            // Taking actual refresh time
+                            var _context = scope.ServiceProvider.GetRequiredService<WebAppContext>();
+                            Site actualSiteInfo = _context.Sites.FirstOrDefault(u => u.Name == site.Name);
+                            await Task.Delay(actualSiteInfo.RefreshTime, cancellationToken);
+                        }
+                       
                     }
                 }
             });           

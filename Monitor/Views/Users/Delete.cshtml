@@ -1,45 +1,45 @@
 @model Monitor.Models.User
-@using Monitor.Services
+
 @{
-    ViewBag.Title = ResourceProvider.GetResource("Delete");
+    ViewBag.Title = "Удаление";
 }
 <div class="container">
     <ol class="breadcrumb">
-        <li><a asp-action="Index" asp-controller="Home">@ResourceProvider.GetResource("Home")</a></li>
-        <li><a asp-action="Index" asp-controller="Users">@ResourceProvider.GetResource("Users")</a></li>
+        <li><a asp-action="Index" asp-controller="Home">Домой</a></li>
+        <li><a asp-action="Index" asp-controller="Users">Пользователи</a></li>
         <li class="active">@ViewBag.Title</li>
     </ol>
     <div class="container-fluid">
         <div class="panel panel-default">
-            <div class="panel-heading"><span class="glyphicon glyphicon-trash"></span> @ResourceProvider.GetResource("ConfirmDelete")</div>
+            <div class="panel-heading"><span class="glyphicon glyphicon-trash"></span> Подтвердить</div>
             <table class="table">
                 <tbody>
                     <tr>
-                        <th scope="row">@ResourceProvider.GetResource("Identifier")</th>
+                        <th scope="row">Идентификатор</th>
                         <td>@Model.Id</td>
                     </tr>
                     <tr>
-                        <th scope="row">@ResourceProvider.GetResource("FirstName") </th>
+                        <th scope="row">Имя </th>
                         <td>@Model.FirstName</td>
                     </tr>
                     <tr>
-                        <th scope="row">@ResourceProvider.GetResource("Patronymic") </th>
+                        <th scope="row">Отчество </th>
                         <td>@Model.Patronymic</td>
                     </tr>
                     <tr>
-                        <th scope="row">@ResourceProvider.GetResource("LastName") </th>
+                        <th scope="row">Фамилия </th>
                         <td>@Model.LastName</td>
                     </tr>
                     <tr>
-                        <th scope="row">@ResourceProvider.GetResource("Role") </th>
+                        <th scope="row">Роль </th>
                         <td>@Model.Role.Name</td>
                     </tr>
                     <tr>
-                        <th scope="row">@ResourceProvider.GetResource("Login") </th>
+                        <th scope="row">Логин </th>
                         <td>@Model.Login</td>
                     </tr>
                     <tr>
-                        <th scope="row">@ResourceProvider.GetResource("Password") </th>
+                        <th scope="row">Пароль </th>
                         <td>@Model.Password</td>
                     </tr>
                 </tbody>
@@ -47,9 +47,9 @@
         </div>
         <form asp-action="Delete" method="post">
             <div class="form-group">
-                <input type="submit" class="btn btn-primary btn-lg btn-block" value="@ResourceProvider.GetResource("Delete")" />
+                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Удаление" />
             </div>
-            <a asp-action="Index" asp-controller="Users" class="btn btn-primary btn-lg btn-block" role="button">@ResourceProvider.GetResource("Back")</a>
+            <a asp-action="Index" asp-controller="Users" class="btn btn-primary btn-lg btn-block" role="button">Назад</a>
         </form>
     </div>
 </div>

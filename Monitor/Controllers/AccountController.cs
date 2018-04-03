@@ -74,7 +74,7 @@ namespace Monitor.Controllers
                     .FirstOrDefaultAsync(u => u.Login == LoginModel.Login && u.Password == LoginModel.Password);
                 if (user != null)
                 {
-                    await Authenticate(user);
+                    await Authenticate(user);                  
                     return Redirect("Home/Index");
 
                 }
@@ -99,7 +99,7 @@ namespace Monitor.Controllers
 
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);          
             return RedirectToAction("Index", "Home");
         }
         public IActionResult AccessDenied(string returnUrl)

@@ -1,36 +1,36 @@
 ﻿@model Monitor.Models.Site
-@using Monitor.Services
+
 @{
-    ViewBag.Title = ResourceProvider.GetResource("Adding");
+    ViewBag.Title = "Добавление";
 }
 <div class="container">
     <ol class="breadcrumb">
-        <li><a asp-action="Index" asp-controller="Home">@ResourceProvider.GetResource("Home")</a></li>
-        <li><a asp-action="Index" asp-controller="Sites">@ResourceProvider.GetResource("Currency")</a></li>
+        <li><a asp-action="Index" asp-controller="Home">Домой</a></li>
+        <li><a asp-action="Index" asp-controller="Sites">Сайты</a></li>
         <li class="active">@ViewBag.Title</li>
     </ol>
     <div class="container-fluid">
         <form asp-action="Create">
             <div class="panel panel-default">
-                <div class="panel-heading">@ResourceProvider.GetResource("Adding")</div>
+                <div class="panel-heading">Добавление</div>
                 <div class="panel-body">
                     <div class="validation" asp-validation-summary="ModelOnly"></div>
                     <div class="form-group">
-                        <label asp-for="Name" class="control-label">@ResourceProvider.GetResource("Site")</label>
+                        <label asp-for="Name" class="control-label">Сайт</label>
                         <input type="text" asp-for="Name" class="form-control" />
                         <span asp-validation-for="Name" />
                     </div>
                     <div class="form-group">
-                        <label asp-for="RefreshTime" class="control-label">@ResourceProvider.GetResource("RefreshTime")</label>
+                        <label asp-for="RefreshTime" class="control-label">Обновление</label>
                         <input type="text" asp-for="RefreshTime" class="form-control" />
                         <span asp-validation-for="RefreshTime" />
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-lg btn-block">@ResourceProvider.GetResource("Add")</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Добавить</button>
             </div>
-            <a asp-action="Index" asp-controller="Sites" class="btn btn-primary btn-lg btn-block" Site="button">@ResourceProvider.GetResource("Back")</a>
+            <a asp-action="Index" asp-controller="Sites" class="btn btn-primary btn-lg btn-block" Site="button">Назад</a>
         </form>
     </div>
 </div>

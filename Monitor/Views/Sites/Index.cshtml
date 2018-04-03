@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<Monitor.Models.Site>
-@using Monitor.Services
+
 @{
-    ViewBag.Title = ResourceProvider.GetResource("Sites");
+    ViewBag.Title = "Сайты";
 }
 <div class="container">
     <ol class="breadcrumb">
-        <li><a asp-area="" asp-action="Index" asp-controller="Home">@ResourceProvider.GetResource("Home")</a></li>
+        <li><a asp-area="" asp-action="Index" asp-controller="Home">Домой</a></li>
         <li class="active">@ViewBag.Title</li>
     </ol>
     <div class="container-fluid">
@@ -13,9 +13,9 @@
             <div class="panel-heading"><span class="glyphicon glyphicon-link"></span> @ViewBag.Title</div>
             <table class="table">
                 <tr>
-                    <th>@ResourceProvider.GetResource("Site")</th>
-                    <th>@ResourceProvider.GetResource("RefreshTime")</th>
-                    <th>@ResourceProvider.GetResource("Actions")</th>
+                    <th>Сайт</th>
+                    <th>Обновление</th>
+                    <th>Действия</th>
                 </tr>
 
                 @foreach (var Site in Model)
@@ -33,7 +33,7 @@
             </table>
         </div>
         <div class="form-group">
-            <a class="btn btn-primary btn-lg btn-block" asp-controller="Sites" asp-action="Create" Site="button">@ResourceProvider.GetResource("Add")</a>
+            <a class="btn btn-primary btn-lg btn-block" asp-controller="Sites" asp-action="Create" role="button">Добавить</a>
         </div>
     </div>
 </div>

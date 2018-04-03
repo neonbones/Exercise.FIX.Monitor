@@ -1,33 +1,33 @@
 ﻿@model Monitor.Models.Role
-@using Monitor.Services
+
 @{
-    ViewBag.Title = ResourceProvider.GetResource("Role");
+    ViewBag.Title = "Роль";
 }
 <div class="container">
     <ol class="breadcrumb">
-        <li><a asp-action="Index" asp-controller="Home">@ResourceProvider.GetResource("Home")</a></li>
-        <li><a asp-action="Index" asp-controller="Roles">@ResourceProvider.GetResource("Roles")</a></li>
+        <li><a asp-action="Index" asp-controller="Home">Домой</a></li>
+        <li><a asp-action="Index" asp-controller="Roles">Роли</a></li>
         <li class="active">@ViewBag.Title</li>
     </ol>
     <div class="container-fluid">
         <div class="panel panel-default">
-            <div class="panel-heading"><span class="glyphicon glyphicon-eye-open"></span> @ResourceProvider.GetResource("ConfirmDelete")</div>
+            <div class="panel-heading"><span class="glyphicon glyphicon-eye-open"></span> Расширенная информация</div>
             <table class="table">
                 <tbody>
                     <tr>
-                        <th scope="row">@ResourceProvider.GetResource("Identifier")</th>
+                        <th scope="row">Идентификатор</th>
                         <td>@Model.Id</td>
                     </tr>
                     <tr>
-                        <th scope="row">@ResourceProvider.GetResource("Role") </th>
+                        <th scope="row">Роль </th>
                         <td>@Model.Name</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="form-group">
-            <a asp-action="Edit" class="btn btn-primary btn-lg btn-block" asp-route-id="@Model.Id">@ResourceProvider.GetResource("Edit")</a>
+            <a asp-action="Edit" class="btn btn-primary btn-lg btn-block" asp-route-id="@Model.Id">Редактировать</a>
         </div>
-        <a asp-action="Index" asp-controller="Roles" class="btn btn-primary btn-lg btn-block" role="button">@ResourceProvider.GetResource("Back")</a>
+        <a asp-action="Index" asp-controller="Roles" class="btn btn-primary btn-lg btn-block" role="button">Назад</a>
     </div>
 </div>
